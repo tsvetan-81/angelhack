@@ -1,0 +1,457 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Curiousity</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Custom Theme files -->
+	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+	<!--gallery -->
+	<link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
+	<!-- //gallery -->
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<!-- font-awesome icons -->
+	<!--//Custom Theme files-->
+	<!-- js -->
+	<script src="js/jquery-2.2.3.min.js"></script>
+	<!-- //js -->
+	<!-- web-fonts -->
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
+
+
+ <!--<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/igorlino/fancybox-plus/1.3.7/css/jquery.fancybox-plus.css" media="screen" />-->
+
+	 
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- banner -->
+	<div id="home" class="banner">
+		<div class="banner-agileinfo">
+			<!-- header -->
+			<div class="header">
+				<div class="container">
+					<div class="menu">
+						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
+						<nav>
+							<a href="#home" class="active scroll">Home</a>
+							<a href="#register" class="scroll">Register</a>
+							<a href="#gallery" class="scroll" id="vaccine-list">My Schedule</a>
+						</nav>
+						<script>
+							(function ($) {
+								// Menu Functions
+								$(document).ready(function () {
+									$('#menuToggle').click(function (e) {
+										var $parent = $(this).parent('.menu');
+										$parent.toggleClass("open");
+										var navState = $parent.hasClass('open') ? "hide" : "show";
+										$(this).attr("title", navState + " navigation");
+										// Set the timeout to the animation length in the CSS.
+										setTimeout(function () {
+											console.log("timeout set");
+											$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
+										}, 200);
+										e.preventDefault();
+									});
+								});
+							})(jQuery);
+						</script>
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<!-- //header -->
+			<div class="banner-text">
+				<div class="container">
+					<h1><a href="#about">Immunisation system</a></h1>
+					<h2 class="w3ls-bnrtext">Curiosity Hospital</h2>
+					<p class="w3ls-p">Patient identification with Face recognition</p>
+					<a href="#register" class="buy btn-wayra scroll">Go to Face Search</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //banner -->
+	<!-- about -->
+	<div class="agile-about w3ls-section text-center" id="register">
+		<div class="container">
+			<h3 class="agileits-title">Face Search</h3>
+			<div class="agileits-about-grid">
+				<div id="drop-area">
+				  <h3>Drag and Drop Image(face) Here<h3/>
+				  <input type="file" title="Click to add Files">
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+	<!-- about-bottom -->
+	<div class="agileits-about-btm">
+		<div class="container">
+			<h3 class="blue-title">Steps</h3>
+			<div class="w3-flex">
+
+			<div class="col-md-4 col-sm-4 col-xs-12 ab1 agileits-about-grid1">
+				<span class="fa fa-file" aria-hidden="true"></span>
+				<h4 class="agileinfo-head">Upload image</h4>
+				
+			</div>
+			<div class="col-md-4 col-sm-4 ab1 agileits-about-grid2">
+				<span class="fa fa-search  wthree-title-list" aria-hidden="true"></span>
+				<h4 class="agileinfo-head">Wait for Face search completion</h4>
+				
+			</div>
+			<div class="col-md-4 col-sm-4 ab1 agileits-about-grid3">
+				<span class="fa fa-list  wthree-title-list" aria-hidden="true"></span>
+				<h4 class="agileinfo-head">See vaccine list</h4>
+				
+			</div>
+			<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<!-- //about-bottom -->
+
+	<div class="w3ls-section agileits-gallery" id="gallery">
+		<div class="container">
+			
+			<h3 class="agileits-title">Vaccines</h3>
+			<h4 class="patient-name"><span class="grey-text">Patient:</span> <span id="patient-name"></span></h4>
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">Show all</a></li>
+					<li role="presentation"><a href="#learning" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">Normal</a></li>
+					<li role="presentation"><a href="#playing" role="tab" id="playing-tab" data-toggle="tab" aria-controls="playing">Basic</a></li>
+					<li role="presentation"><a href="#painting" role="tab" id="painting-tab" data-toggle="tab" aria-controls="painting">Critical</a></li>
+				</ul>
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+						<div class="w3_tab_img">
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g1.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Adenovirus</h5>
+									<p><span class="red-text">Due date: 02.02.2018</span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a id="various5" href="http://localhost:8080/index2.html" placeholder="#" >
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines2.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Hepatitis A</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g3.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines3.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Cholera</h5>
+									<p>Due date: 12.10.2018 </p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g4.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines4.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Hepatitis B</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g5.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines5.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Influenza</h5>
+									<p>Due date: 12.10.2018</p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g6.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines6.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Meningococcal</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g7.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines7.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Tetanus</h5>
+									<p>Due date: 12.10.2018</p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g8.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines8.jpg" alt=" " class="img-responsive" />
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Varicella</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span> </p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="learning" aria-labelledby="learning-tab">
+						<div class="w3_tab_img">
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g2.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Yellow Fever</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g3.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines2.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Vaccinia</h5>
+									<p>Due date: 12.10.2018</p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="playing" aria-labelledby="playing-tab">
+						<div class="w3_tab_img">
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g4.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines3.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Rotavirus</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g1.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines4.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Pneumococcal</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g2.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines5.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Varicella</h5>
+									<p>Due date: 12.10.2018</p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g3.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines6.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Haemophilus</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="painting" aria-labelledby="painting-tab">
+						<div class="w3_tab_img">
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g1.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines7.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>DTaP</h5>
+									<p>Due date: 12.10.2018 </p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g2.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines8.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>My vaccine</h5>
+									<p>Due date: 12.10.2018</p>
+								</div>
+							</div>
+							<div class="col-sm-3 w3_tab_img_left">
+								<div class="demo">
+									<a class="cm-overlay" href="images/g3.jpg">
+										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/vaccines.jpg" alt=" " class="img-responsive">
+										</figure>
+									</a>
+								</div>
+								<div class="agile-gallery-info">
+									<h5>Herpes Zoster</h5>
+									<p><span class="green-text"><i class="fa fa-check" aria-hidden="true"></i> Done </span></p>
+								</div>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.tools.min.js"></script>
+		<script src="js/jquery.mobile.custom.min.js"></script>
+		<script src="js/jquery.cm-overlay.js"></script>
+		<!--<script type="text/javascript" src="https://cdn.rawgit.com/igorlino/fancybox-plus/1.3.7/src/jquery.fancybox-plus.js"></script>-->
+		<!-- file upload -->
+		<!--<script src="js/vendor/jquery.ui.widget.js"></script>
+		<script src="js/jquery.iframe-transport.js"></script>	
+		<script src="js/jquery.fileupload.js"></script>
+		<script src="js/cors/jquery.postmessage-transport.js"></script>-->
+		<!-- end file upload -->
+		<script>
+			$(document).ready(function () {
+				//$('.cm-overlay').cmOverlay();
+			});
+			
+			$(function(){
+			
+
+				$("#drop-area").dmUploader({
+				  url: 'http://localhost:5001',
+				  multiple: false,
+				  dataType: "json",
+				  onInit: function(){
+				    console.log('Callback: Plugin initialized');
+				  },
+				  onUploadSuccess: function(id, data) {
+				  	if(data.face_found_in_image) {
+				  		$("#patient-name").html(data.personname);
+				  		$("#vaccine-list").click();
+				  	} else {
+
+				  	}
+				  }
+				});
+
+			});
+		</script>
+	</div>
+	<!-- //menu -->
+	
+	<div class="agileits_w3layouts-footer">
+		<p>© 2018 Impact immunisation. All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+	</div>
+	<!-- start-smooth-scrolling -->
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<script src="js/jquery.dm-uploader.min.js?v=v10"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smooth-scrolling -->
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$().UItoTop({
+				easingType: 'easeOutQuart'
+			});
+			/*$("#various5").fancyboxPlus({
+				'width'				: '75%',
+				'height'			: '75%',
+		        'autoScale'     	: false,
+		        'transitionIn'		: 'none',
+				'transitionOut'		: 'none',
+				'type'				: 'iframe'
+			});*/
+		});
+	</script>
+<script type="text/javascript" src="js/SmoothScroll.min.js"></script>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>

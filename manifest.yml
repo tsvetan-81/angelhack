@@ -1,0 +1,5 @@
+applications:
+- path: .
+  memory: 64M
+  name: ts-impact-immunisation
+  buildpack: staticfile_buildpack
